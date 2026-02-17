@@ -1,1 +1,1 @@
-# phyton_2nd_sem
+# A repository for Python labs and assignments
