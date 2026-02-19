@@ -39,11 +39,9 @@ def calculate_numpy(prices, freights):
 
 def compare_speed():
     startA = time.time()
-    python_results = calculate_phyton(price_list, freights_list)
     python_time = time.time() - startA
 
     startB = time.time()
-    numpy_results = calculate_numpy(prices, freights)
     numpy_time = time.time() - startB
 
     print(f"Python время: {python_time:.10f} сек")
