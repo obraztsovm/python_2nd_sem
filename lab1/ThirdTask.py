@@ -15,8 +15,8 @@ clean_weight = volumetric_weight[~np.isnan(volumetric_weight)]
 print('объемный вес посчитан для', len(volumetric_weight), 'товаров')
 print('из них', len(volumetric_weight) - len(clean_weight), 'товаров с пропущенными размерами')
 print('первые пять значений:', volumetric_weight[:5])
-print('средний объемный вес (без учета пропусков):', np.mean(clean_weight).round(2))
-print()
+print('средний объемный вес (без учета пропусков):', np.mean(clean_weight).round(3))
+
 
 np.random.seed(42)
 prices = np.random.randint(50, 500, size=(1000, 5))

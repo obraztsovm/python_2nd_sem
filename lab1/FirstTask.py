@@ -37,15 +37,22 @@ def calculate_numpy(prices, freights):
 
     return (prices * (1 - discount_mask)) + freights
 
+
 def compare_speed():
     startA = time.time()
-    python_time = time.time() - startA
+    result_python = calculate_phyton(price_list, freights_list)
+    endA = time.time()
+    python_time = endA - startA
 
     startB = time.time()
-    numpy_time = time.time() - startB
+    result_numpy = calculate_numpy(prices, freights)
+    endB = time.time()
+    numpy_time = endB - startB
 
-    print(f"Python время: {python_time:.10f} сек")
-    print(f"NumPy время: {numpy_time:.10f} сек")
-    print(f"Ускорение: {python_time / numpy_time:.5f}x")
+    print(f"python время: {python_time:.6f} сек")
+    print(f"numpy время: {numpy_time:.6f} сек")
+    print(f"ускорение: {python_time / numpy_time:.2f}x")
+
+    print(f"результаты совпадают: {np.allclose(result_python, result_numpy)}")
 
 compare_speed()
